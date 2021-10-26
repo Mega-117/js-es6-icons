@@ -102,21 +102,25 @@ let listaCard = [
 // per farlo uso un ciclo for e innerHTML per agg alla pagina
 let allCardContainer = document.querySelector(".container");
 //console.log(allCardContainer);
+let singolaCard = singleCardGeneretor(listaCard);
+function singleCardGeneretor(array) {
+	allCardContainer.innerHTML = "";
 
-for (let i = 0; i < listaCard.length; i++) {
-	let { name, prefix, type, family } = listaCard[i];
+	for (let i = 0; i < array.length; i++) {
+		let { name, prefix, type, family } = array[i];
 
-	let tagCard = `<div class="card-container">
+		let tagCard = `<div class="card-container">
 		<div class="card">
-			<i class="${family} ${type} ${prefix}${name}"></i>
-			<p>${name}</p>
+		<i class="${family} ${type} ${prefix}${name}"></i>
+		<p>${name}</p>
 		</div>
-	</div>`;
+		</div>`;
 
-	//console.log(tagCard);
-	allCardContainer.innerHTML += tagCard;
-};
+		//console.log(tagCard);
+		allCardContainer.innerHTML += tagCard;
+	};
 
+}
 
 //************************* ANIMAL *******************************/ 
 
@@ -131,11 +135,7 @@ function animalFilter(Oggetto) {
 }
 
 console.log(arrAnimal);
-for (let i = 0; i < arrAnimal; i++) {
-	let element = arrAnimal[i];
-	let classAnimal = "class-animal";
-	console.log(classAnimal);
-}
+
 
 
 //************************* VEGETABLE *******************************/ 
@@ -149,26 +149,43 @@ function vegetableFilter(Oggetto) {
 }
 
 console.log(arrVegetable);
-for (let i = 0; i < arrVegetable; i++) {
-	let element = arrVegetable[i];
-	let classvegetable = "class-vegetable";
-	console.log(classvegetable);
-}
+
 
 
 //*********************** USER *******************************/			
-function vegetableFilter(Oggetto) {
-	if (Oggetto.type === "vegetable") {
+let arrUser = listaCard.filter(userFilter);
+//funz che filtra gli user
+function userFilter(Oggetto) {
+	if (Oggetto.type === "user") {
 		return true;
 	}
 }
 
-console.log(arrVegetable);
-for (let i = 0; i < arrVegetable; i++) {
-	let element = arrVegetable[i];
-	let classvegetable = "class-vegetable";
-	console.log(classvegetable);
-}
+console.log(arrUser);
 
+
+
+//seleziono il valore del select metto in ascolto e visualizzo sono gli oggeti con type = al valore del select
+
+
+let filterIcons = document.getElementById("filter-icons");
+//console.log(filterIcons);
+
+filterIcons.addEventListener("change", function () {
+	let valoreSelect = filterIcons.value;
+	console.log(valoreSelect);
+	if (valoreSelect === "animal") {
+		let animalCard = singleCardGeneretor(arrAnimal);
+	}
+	if (valoreSelect === "vegetable") {
+		let vegetableCard = singleCardGeneretor(arrVegetable);
+	}
+	if (valoreSelect === "user") {
+		let userCard = singleCardGeneretor(arrUser);
+	}
+	if (valoreSelect === "tutti") {
+		let tuttiCard = singleCardGeneretor(listaCard);
+	}
+});
 
 
