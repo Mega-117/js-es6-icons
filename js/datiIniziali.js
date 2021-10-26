@@ -1,4 +1,4 @@
-[
+let listaCard = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -96,3 +96,44 @@
 		family: 'fas'
 	}
 ];
+
+//inserite tutte le card nella pagina
+//prendele una a una e inserirle
+// per farlo uso un ciclo for e innerHTML per agg alla pagina
+let allCardContainer = document.querySelector(".container");
+//console.log(allCardContainer);
+
+for (let i = 0; i < listaCard.length; i++) {
+	let { name, prefix, type, family } = listaCard[i];
+
+	let tagCard = `<div class="card-container">
+		<div class="card">
+			<i class="${family} ${type} ${prefix}${name}"></i>
+			<p>${name}</p>
+		</div>
+	</div>`;
+
+	//console.log(tagCard);
+	allCardContainer.innerHTML += tagCard;
+};
+
+//per filtrare gli animali faccio una funz che filtra solo il type animali
+
+/* let objAnimal = listaCard.filter(animalFilter);
+
+function animalFilter(Oggetto) {
+	if (Oggetto.type === "animal") {
+		return true;
+	}
+
+
+}
+console.log(objAnimal);
+for (let i = 0; i < objAnimal; i++) {
+	let element = objAnimal[i];
+	let classAnimal = "class-animal";
+	console.log(classAnimal);
+}
+ */
+
+

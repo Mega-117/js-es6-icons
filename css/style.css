@@ -11,6 +11,8 @@ h1{
 .label-style{
     color: white;
     font-size: 20px;
+    padding-right: 5px;
+    vertical-align: middle;
 }
 
 .nav-style{
@@ -42,9 +44,25 @@ main{
     padding: 25px 15px;
     text-transform:uppercase;
     border-radius: 10px;
+    font-weight: bold;
 }
 .card i{
-    font-size: 80px;
+    font-size: 50px;
     margin-bottom: 20px;
 }
+
+
+/* colori*/
+
+.animal{
+    color: #0000ff;
+}
+.vegetable{
+    color: #ffa500;
+}
+.user{
+    color: #800080;
+}
+
+
 
