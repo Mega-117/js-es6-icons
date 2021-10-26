@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    color: #29b1dd;
+    padding: 10px;
+}
+
+.label-style{
+    color: white;
+    font-size: 20px;
+}
+
+.nav-style{
+    background-color: #29b1dd;
+    text-align: center;
+    padding: 10px 0;
+}
+
+main{
+    background-color: #dddddd;
+    height: calc(100vh - 43px - 57px);
+}
