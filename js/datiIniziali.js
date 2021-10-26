@@ -117,23 +117,58 @@ for (let i = 0; i < listaCard.length; i++) {
 	allCardContainer.innerHTML += tagCard;
 };
 
+
+//************************* ANIMAL *******************************/ 
+
 //per filtrare gli animali faccio una funz che filtra solo il type animali
-
-/* let objAnimal = listaCard.filter(animalFilter);
-
+// uso il filter + la funz che filtra solo gli animal per creare un arr di solo animali
+let arrAnimal = listaCard.filter(animalFilter);
+//funz che filtra gli animali
 function animalFilter(Oggetto) {
 	if (Oggetto.type === "animal") {
 		return true;
 	}
-
-
 }
-console.log(objAnimal);
-for (let i = 0; i < objAnimal; i++) {
-	let element = objAnimal[i];
+
+console.log(arrAnimal);
+for (let i = 0; i < arrAnimal; i++) {
+	let element = arrAnimal[i];
 	let classAnimal = "class-animal";
 	console.log(classAnimal);
 }
- */
+
+
+//************************* VEGETABLE *******************************/ 
+
+let arrVegetable = listaCard.filter(vegetableFilter);
+//funz che filtra gli vegetablei
+function vegetableFilter(Oggetto) {
+	if (Oggetto.type === "vegetable") {
+		return true;
+	}
+}
+
+console.log(arrVegetable);
+for (let i = 0; i < arrVegetable; i++) {
+	let element = arrVegetable[i];
+	let classvegetable = "class-vegetable";
+	console.log(classvegetable);
+}
+
+
+//*********************** USER *******************************/			
+function vegetableFilter(Oggetto) {
+	if (Oggetto.type === "vegetable") {
+		return true;
+	}
+}
+
+console.log(arrVegetable);
+for (let i = 0; i < arrVegetable; i++) {
+	let element = arrVegetable[i];
+	let classvegetable = "class-vegetable";
+	console.log(classvegetable);
+}
+
 
 
